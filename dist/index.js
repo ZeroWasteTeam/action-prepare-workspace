@@ -504,7 +504,7 @@ module.exports = require("os");
 /***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
 
 const core = __webpack_require__(470);
-const github = __webpack_require__(469);
+const { GitHub, context } = __webpack_require__(469);
 
 const util = __webpack_require__(669);
 const exec = util.promisify(__webpack_require__(129).exec);
@@ -528,9 +528,8 @@ function setResult(eventName, sha, branch) {
 
 async function prepare(){
 	console.log('start of prepare method');
-	console.log(github);
+	console.log(context);
 	
-	console.log(JSON.stringify(github,null, "\t"));
 	var eventName =  github.context.eventName;
 	console.log('start of prepare method'+eventName);
 	if(eventName == "push") {

@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
+const { GitHub, context } = require('@actions/github');
 
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -23,9 +23,8 @@ function setResult(eventName, sha, branch) {
 
 async function prepare(){
 	console.log('start of prepare method');
-	console.log(github);
+	console.log(context);
 	
-	console.log(JSON.stringify(github,null, "\t"));
 	var eventName =  github.context.eventName;
 	console.log('start of prepare method'+eventName);
 	if(eventName == "push") {
