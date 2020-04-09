@@ -8,6 +8,7 @@ const exec = util.promisify(require('child_process').exec);
 //console.log(process.env['']);
 
 console.log(JSON.stringify(github.context, null, "  "));
+console.log(Object.getOwnPropertyNames(github.context));
 
 console.log('action started');
 
