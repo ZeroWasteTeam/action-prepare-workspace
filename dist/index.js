@@ -529,7 +529,7 @@ function setResult(eventName, sha, branch) {
 async function prepare(){
 	console.log('start of prepare method');
 	console.log(context);
-	console.log(new Context());
+	console.log(typeof(context));
 	/*
 	var eventName =  github.context.eventName;
 	console.log('start of prepare method'+eventName);
