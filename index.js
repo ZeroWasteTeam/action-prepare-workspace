@@ -24,6 +24,8 @@ function setResult(eventName, sha, branch) {
 async function prepare(){
 	console.log('start of prepare method');
 	console.log(github);
+	
+	console.log(JSON.stringify(github,null, "\t"));
 	var eventName =  github.context.eventName;
 	console.log('start of prepare method'+eventName);
 	if(eventName == "push") {
