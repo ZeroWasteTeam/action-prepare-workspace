@@ -5,6 +5,8 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
 
+console.log('action started');
+
 async function executeBashCommand(command) {
   const res = await exec(command);
   const { stdout, stderr } = res;

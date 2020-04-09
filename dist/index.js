@@ -510,6 +510,8 @@ const util = __webpack_require__(669);
 const exec = util.promisify(__webpack_require__(129).exec);
 
 
+console.log('action started');
+
 async function executeBashCommand(command) {
   const res = await exec(command);
   const { stdout, stderr } = res;
