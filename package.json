@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"dist": "npx ncc build index.js -o dist"
+    "dist": "npx ncc build index.js -o dist"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "homepage": "https://github.com/ZeroWasteTeam/action-prepare-workspace#readme",
   "devDependencies": {
     "@zeit/ncc": "^0.22.1"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1"
   }
 }
