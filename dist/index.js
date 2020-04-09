@@ -529,7 +529,7 @@ function setResult(eventName, sha, branch) {
 async function prepare(){
 	console.log('start of prepare method');
 	console.log(context);
-	
+	/*
 	var eventName =  github.context.eventName;
 	console.log('start of prepare method'+eventName);
 	if(eventName == "push") {
@@ -545,7 +545,8 @@ async function prepare(){
 		await executeBashCommand(`git checkout -f ${client_payload.buildSha}`);
 	} else {
 		throw new Error(`The trigger is unknown: ${github.context.eventName}. The supported triggers are push and respository-dispatch`)
-	}	
+	}
+	*/	
 }
 
 prepare().then(x => { }).catch(x => core.setFailed(x.messsage));
