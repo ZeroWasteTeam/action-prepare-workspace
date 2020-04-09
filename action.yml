@@ -1,0 +1,15 @@
+name: Prepare workspace
+author: Nachiappan NK
+description: Prepare the workspace for build
+
+inputs:
+  
+outputs:
+  build-branch:
+    description: 'The branch where the build has to be triggered'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'  
+
+
