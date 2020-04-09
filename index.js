@@ -40,7 +40,7 @@ async function prepare(){
 		if(buildSha == "") throw new Error("While triggering with repository-dispatch, buildBranch property is not set");
 		if(buildBranch == "") throw new Error("While triggering with repository-dispatch,buildSha property is not set");
 		setResult(eventName, buildSha, buildBranch);
-		await executeBashCommand(`git checkout -f ${client_payload.buildSha}`);
+		await executeBashCommand(`git checkout -f ${buildSha}`);
 	} else {
 		throw new Error(`The trigger is unknown: ${github.context.eventName}. The supported triggers are push and respository-dispatch`)
 	}
