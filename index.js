@@ -7,7 +7,7 @@ const exec = util.promisify(require('child_process').exec);
 
 //console.log(process.env['']);
 
-console.log("sss>>"+`${github.event_name}`);
+console.log("sss>>"+`${github.context.repo.owner}`);
 
 console.log('action started');
 
