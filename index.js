@@ -7,6 +7,7 @@ const exec = util.promisify(require('child_process').exec);
 
 //console.log(process.env['']);
 
+console.log('action started');
 console.log(JSON.stringify(github.context, null, "  "));
 console.log(Object.getOwnPropertyNames(github.context));
 
@@ -48,4 +49,4 @@ async function prepare(){
 	*/	
 }
 
-prepare().then(x => { }).catch(x => core.setFailed(x.messsage));
+prepare().then(x => { }).catch(x => core.setFailed(x.message));
