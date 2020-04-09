@@ -36,7 +36,7 @@ async function executeBashCommand(command) {
 async function prepare(){
 	if(eventName == "push") {
 		setResult(eventName, github.context.sha, branch);
-	} else if(eventName == "repository_dispath") {
+	} else if(eventName == "repository_dispatch") {
 		if(buildSha == "") throw new Error("While triggering with repository-dispatch, buildBranch property is not set");
 		if(buildBranch == "") throw new Error("While triggering with repository-dispatch,buildSha property is not set");
 		setResult(eventName, buildSha, buildBranch);
