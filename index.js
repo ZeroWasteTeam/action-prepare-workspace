@@ -7,8 +7,9 @@ const exec = util.promisify(require('child_process').exec);
 let eventName = github.context.eventName;
 let sha = github.context.sha;
 let branch = github.context.ref.replace("refs\/heads\/", "");
-
-
+let buildBranch = github.context.payload.client_payload.buildBranch;
+let buildSha = github.context.payload.client_payload.buildSha;
+/*
 if(github.context.payload['client_payload'] != undefined) {
 	var client_payload = github.context.payload.client_payload;
 	if(client_payload['buildSha'] != undefined) {
@@ -18,6 +19,8 @@ if(github.context.payload['client_payload'] != undefined) {
 		var buildBranch = github.context.payload.buildBranch;
 	}
 }
+*/
+
 
 console.log(eventName);
 console.log(sha);
