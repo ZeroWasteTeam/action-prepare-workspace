@@ -4,15 +4,28 @@ const github = require('@actions/github');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
+let eventName = github.context.eventName;
+let sha = github.context.sha;
+let branch = github.context.branch;
+if(github.context.payload['client_payload'] != undefined) {
+	var client_payload = github.context.payload.client_payload;
+	if(client_payload['buildSha'] != undefined) {
+		var buildSha = github.context.payload.buildSha;
+	}
+	if(client_payload['buildBranch'] != undefined) {
+		var buildBranch = github.context.payload.buildBranch;
+	}
+}
 
-//console.log(process.env['']);
+console.log(eventName);
+console.log(sha);
+console.log(branch);
+console.log(buildSha);
+console.log(buildBranch);
 
-console.log('action started');
-console.log(JSON.stringify(github.context, null, "  "));
-console.log(Object.getOwnPropertyNames(github.context));
 
-console.log('action started');
 
+/*
 async function executeBashCommand(command) {
   const res = await exec(command);
   const { stdout, stderr } = res;
@@ -29,7 +42,7 @@ function setResult(eventName, sha, branch) {
 
 async function prepare(){
 
-	/*
+	
 	var eventName =  github.context.eventName;
 	console.log('start of prepare method'+eventName);
 	if(eventName == "push") {
@@ -46,7 +59,8 @@ async function prepare(){
 	} else {
 		throw new Error(`The trigger is unknown: ${github.context.eventName}. The supported triggers are push and respository-dispatch`)
 	}
-	*/	
+		
 }
 
 prepare().then(x => { }).catch(x => core.setFailed(x.message));
+*/
