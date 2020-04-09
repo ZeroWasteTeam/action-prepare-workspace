@@ -28,7 +28,6 @@ console.log(branch);
 console.log(buildSha);
 console.log(buildBranch);
 
-console.log(JSON.stringify(github.context.payload, null, " "));
 
 /*
 async function executeBashCommand(command) {
