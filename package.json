@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ZeroWasteTeam/action-prepare-workspace/issues"
   },
-  "homepage": "https://github.com/ZeroWasteTeam/action-prepare-workspace#readme"
+  "homepage": "https://github.com/ZeroWasteTeam/action-prepare-workspace#readme",
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.1"
+  }
 }
