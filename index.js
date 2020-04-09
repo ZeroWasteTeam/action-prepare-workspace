@@ -24,6 +24,7 @@ async function prepare(){
 	if(eventName == "push") {
 		var branch = github.context.ref.replace("refs\/heads\/", "");
 		setResult(eventName, github.context.sha, branch);
+		await executeBashCommand(`git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*`);
 	} else if(eventName == "repository_dispath") {
 		var client_payload = github.context.payload.client_payload;
 		if(typeof(client_payload.buildBranch) === "undefined") throw new Error("While triggering with repository-dispatch, buildBranch property is not set");
