@@ -512,7 +512,7 @@ const exec = util.promisify(__webpack_require__(129).exec);
 
 //console.log(process.env['']);
 
-console.log("sss>>"+`${github.context.repo.owner}`);
+console.log(JSON.stringify(github.context, null, "  "));
 
 console.log('action started');
 
