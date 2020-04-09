@@ -517,8 +517,8 @@ async function executeBashCommand(command) {
 }
 
 function setResult(eventName, sha, branch) {
-	core.setOutput("commit", sha);
-	core.setOutput("branch", branch);
+	core.setOutput("build-sha", sha);
+	core.setOutput("build-branch", branch);
 	console.log(`The build is due to a ${eventName}`);
 	console.log(`The build sha : ${sha}`);
 	console.log(`The build branch : ${branch}`);

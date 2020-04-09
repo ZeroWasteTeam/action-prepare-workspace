@@ -7,6 +7,8 @@ inputs:
 outputs:
   build-branch:
     description: 'The branch where the build has to be triggered'
+  build-sha:
+    description: 'The commit is of the commit to be built'
 
 runs:
   using: 'node12'
