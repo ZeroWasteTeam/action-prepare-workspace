@@ -511,7 +511,9 @@ const exec = util.promisify(__webpack_require__(129).exec);
 
 let eventName = github.context.eventName;
 let sha = github.context.sha;
-let branch = github.context.branch;
+let branch = github.context.ref.replace("refs\/heads\/", "");
+
+
 if(github.context.payload['client_payload'] != undefined) {
 	var client_payload = github.context.payload.client_payload;
 	if(client_payload['buildSha'] != undefined) {
