@@ -504,11 +504,15 @@ module.exports = require("os");
 /***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
 
 const core = __webpack_require__(470);
-const { GitHub, context } = __webpack_require__(469);
+const github = __webpack_require__(469);
 
 const util = __webpack_require__(669);
 const exec = util.promisify(__webpack_require__(129).exec);
 
+
+//console.log(process.env['']);
+
+console.log("sss>>"+`${github.event_name}`);
 
 console.log('action started');
 
@@ -527,9 +531,7 @@ function setResult(eventName, sha, branch) {
 }
 
 async function prepare(){
-	console.log('start of prepare method');
-	console.log(context);
-	console.log(typeof(context));
+
 	/*
 	var eventName =  github.context.eventName;
 	console.log('start of prepare method'+eventName);
